@@ -7,25 +7,19 @@ modded class DayZPlayerImplement
     {
         super.EEKilled(killer);
 
-        if (!g_Game.GetPBHZConfig().Get_SpawnZombieOnPlayersDeath())
-        {
-            return;
-        }
-
         if (Keepitdead_zombie)
         {
-            PrintFormat("Dead player %1 already spawned zombie; skipping", this);
+            PrintFormat("Dead player %1 already spawned infected; skipping", this);
             return;
         }
 
-        PrintFormat("Player %1 has died; spawning zombie", this);
+        PrintFormat("Player %1 has died; spawning infected", this);
 
         vector zombieOffset = GetPosition() - "0.3 -0.3 0.3";
 
-        array<string> Hz_ZombieClass = g_Game.GetPBHZConfig().Get_ZombieClassName();
         Keepitdead_zombie = ZombieBase.Cast(
             GetGame().CreateObjectEx(
-                Hz_ZombieClass.GetRandomElement(),
+                "ZmbM_HumanZombie",
                 zombieOffset,
                 ECE_PLACE_ON_SURFACE | ECE_INITAI));
 
