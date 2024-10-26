@@ -1,7 +1,7 @@
 /**
  * @file zombiemilitary.c
  * @author Morette [Bob Construtor] (https://dayzprojectbr.wixsite.com/projectbr)
- * @brief A simple script to generate a parasite and a zombie.
+ * @brief A simple script to generate a zombie.
  * @version 0.1
  * @date 2021-09-22
  *
@@ -62,11 +62,6 @@ modded class ZombieBase extends DayZInfected
         }
     }
 
-    bool IsParasite()
-    {
-        return false;
-    }
-
     bool HandleDeath(int pCurrentCommandID)
     {
         if ( pCurrentCommandID == DayZInfectedConstants.COMMANDID_DEATH )
@@ -80,31 +75,12 @@ modded class ZombieBase extends DayZInfected
             m_MovementSpeed = -1;
             m_MindState = -1;
             SetSynchDirty();
-
-            if (g_Game.GetPBHZConfig().Get_SpawnParasiteOnZombiesDeath())
-            {
-                vector zombieOffset2 = GetPosition() - "0.3 -0.3 0.3";
-                float maybeZ = Math.RandomInt(0, 99);
-                ZombieBase humanZ;
-
-                if (maybeZ > 90 && !humanZ.IsParasite())
-                {
-                    humanZ = ZombieBase.Cast(GetGame().CreateObjectEx("ZmbM_ParasiteZombie", zombieOffset2, ECE_PLACE_ON_SURFACE | ECE_INITAI));
-                };
-            };
             return true;
         }
 
         return false;
     }
 
-};
-class ZmbM_ParasiteZombie: ZmbM_SoldierNormal_Base
-{
-    bool IsParasite()
-    {
-        return true;
-    }
 };
 class ZmbM_HumanZombie: ZmbM_SoldierNormal_Base{};
 

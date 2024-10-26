@@ -5,7 +5,6 @@ class PBHZConfig
 
     private ref array<string> ZombieClassName;
     private bool SpawnZombieOnPlayersDeath = true;
-    private bool SpawnParasiteOnZombiesDeath = true;
 
     void PBHZConfig()
     {
@@ -44,7 +43,6 @@ class PBHZConfig
     {
         ZombieClassName = {"ZmbM_HumanZombie", "ZmbM_usSoldier_normal_Woodland", "ZmbM_usSoldier_normal_Desert","ZmbM_SoldierNormal"};
         SpawnZombieOnPlayersDeath = true;
-        SpawnParasiteOnZombiesDeath = true;
         Save();
     }
 
@@ -56,11 +54,6 @@ class PBHZConfig
     bool Get_SpawnZombieOnPlayersDeath()
     {
         return SpawnZombieOnPlayersDeath;
-    }
-
-    bool Get_SpawnParasiteOnZombiesDeath()
-    {
-        return SpawnParasiteOnZombiesDeath;
     }
 };
 
