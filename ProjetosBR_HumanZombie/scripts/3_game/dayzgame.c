@@ -10,11 +10,11 @@ modded class DayZGame
         }
 
         Print("[PBHZConfig] DayZGame --> Cannot Locate PBHZConfig Config File...");
-	    return null;
+        return null;
     }
 
     void SetPBHZConfig(ref PBHZConfig cfg)
-	{
-		m_PBHZConfig = cfg;
-	}
+    {
+        m_PBHZConfig = cfg;
+    }
 }

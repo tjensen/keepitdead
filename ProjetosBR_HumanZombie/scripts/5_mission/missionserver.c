@@ -10,9 +10,9 @@ modded class MissionServer
     override void OnInit()
     {
         super.OnInit();
-        
-        Print("[PBHZConfig] Server Cfg loading..."); 
-       
+
+        Print("[PBHZConfig] Server Cfg loading...");
+
         m_PBHZConfig = new PBHZConfig();
         g_Game.SetPBHZConfig( m_PBHZConfig );
     }

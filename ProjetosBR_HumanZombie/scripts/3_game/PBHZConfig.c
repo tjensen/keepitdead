@@ -1,18 +1,18 @@
 class PBHZConfig
 {
-	static const string MODCONFIG_ROOT_FOLDER = "$profile:ProjetoBRs/";
+    static const string MODCONFIG_ROOT_FOLDER = "$profile:ProjetoBRs/";
     static const string CONFIG_PATH = MODCONFIG_ROOT_FOLDER + "PBHZ_Settings.json";
 
-	private ref array<string> ZombieClassName;
+    private ref array<string> ZombieClassName;
     //private ref array<string> ZombieSpawnParasiteClassName;
     private bool SpawnZombieOnPlayersDeath = true;
-	private bool SpawnParasiteOnZombiesDeath = true;
+    private bool SpawnParasiteOnZombiesDeath = true;
 
-	void PBHZConfig()
-	{
-		if (!GetGame().IsServer()) return;
+    void PBHZConfig()
+    {
+        if (!GetGame().IsServer()) return;
 
-		if (!FileExist(MODCONFIG_ROOT_FOLDER))
+        if (!FileExist(MODCONFIG_ROOT_FOLDER))
         {
             MakeDirectory(MODCONFIG_ROOT_FOLDER);
         }
@@ -26,7 +26,7 @@ class PBHZConfig
         Load();
     }
 
-	bool Load()
+    bool Load()
     {
         if (FileExist(CONFIG_PATH))
         {
@@ -36,38 +36,38 @@ class PBHZConfig
         return false;
     }
 
-	protected void Save()
+    protected void Save()
     {
         JsonFileLoader<PBHZConfig>.JsonSaveFile(CONFIG_PATH, this);
     }
 
-	protected void Default()
+    protected void Default()
     {
-		ZombieClassName = {"ZmbM_HumanZombie", "ZmbM_usSoldier_normal_Woodland", "ZmbM_usSoldier_normal_Desert","ZmbM_SoldierNormal"};
+        ZombieClassName = {"ZmbM_HumanZombie", "ZmbM_usSoldier_normal_Woodland", "ZmbM_usSoldier_normal_Desert","ZmbM_SoldierNormal"};
         SpawnZombieOnPlayersDeath = true;
         SpawnParasiteOnZombiesDeath = true;
         //ZombieSpawnParasiteClassName = {"ZmbM_HumanZombie", "ZmbM_usSoldier_normal_Woodland", "ZmbM_usSoldier_normal_Desert","ZmbM_SoldierNormal"};
-		Save();
-	}
+        Save();
+    }
 
-	ref array<string> Get_ZombieClassName()
-	{
-		return ZombieClassName;
-	}
+    ref array<string> Get_ZombieClassName()
+    {
+        return ZombieClassName;
+    }
 
     bool Get_SpawnZombieOnPlayersDeath()
-	{
-		return SpawnZombieOnPlayersDeath;
-	}
+    {
+        return SpawnZombieOnPlayersDeath;
+    }
 
-	bool Get_SpawnParasiteOnZombiesDeath()
-	{
-		return SpawnParasiteOnZombiesDeath;
-	}
+    bool Get_SpawnParasiteOnZombiesDeath()
+    {
+        return SpawnParasiteOnZombiesDeath;
+    }
 
     //ref array<string> Get_ZombieSpawnParasiteClassName()
-	//{
-	//	return ZombieSpawnParasiteClassName;
-	//}
+    //{
+    //  return ZombieSpawnParasiteClassName;
+    //}
 
 };
