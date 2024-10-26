@@ -31,34 +31,16 @@ class CfgMods
         type="mod";
         dependencies[]=
         {
-            "Game",
-            "World",
-            "Mission"
+            "World"
         };
         class defs
         {
-            class gameScriptModule
-            {
-                value="";
-                files[]=
-                {
-                    "ProjetosBR_HumanZombie/scripts/3_Game"
-                };
-            };
             class worldScriptModule
             {
                 value="";
                 files[]=
                 {
                     "ProjetosBR_HumanZombie/scripts/4_World"
-                };
-            };
-            class missionScriptModule
-            {
-                value="";
-                files[]=
-                {
-                    "ProjetosBR_HumanZombie/scripts/5_Mission"
                 };
             };
         };
