@@ -4,7 +4,6 @@ class PBHZConfig
     static const string CONFIG_PATH = MODCONFIG_ROOT_FOLDER + "PBHZ_Settings.json";
 
     private ref array<string> ZombieClassName;
-    //private ref array<string> ZombieSpawnParasiteClassName;
     private bool SpawnZombieOnPlayersDeath = true;
     private bool SpawnParasiteOnZombiesDeath = true;
 
@@ -46,7 +45,6 @@ class PBHZConfig
         ZombieClassName = {"ZmbM_HumanZombie", "ZmbM_usSoldier_normal_Woodland", "ZmbM_usSoldier_normal_Desert","ZmbM_SoldierNormal"};
         SpawnZombieOnPlayersDeath = true;
         SpawnParasiteOnZombiesDeath = true;
-        //ZombieSpawnParasiteClassName = {"ZmbM_HumanZombie", "ZmbM_usSoldier_normal_Woodland", "ZmbM_usSoldier_normal_Desert","ZmbM_SoldierNormal"};
         Save();
     }
 
@@ -64,10 +62,6 @@ class PBHZConfig
     {
         return SpawnParasiteOnZombiesDeath;
     }
-
-    //ref array<string> Get_ZombieSpawnParasiteClassName()
-    //{
-    //  return ZombieSpawnParasiteClassName;
-    //}
-
 };
+
+// vim:ft=enforce

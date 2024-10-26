@@ -25,5 +25,6 @@ modded class MissionServer
             GetRPCManager().SendRPC("PBHZConfig", "PBHZConfigStoreConfig", new Param1<ref PBHZConfig>( m_PBHZConfig ), true, sender);
         }
     }
-
 };
+
+// vim:ft=enforce

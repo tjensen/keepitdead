@@ -17,4 +17,6 @@ modded class DayZGame
     {
         m_PBHZConfig = cfg;
     }
-}
+};
+
+// vim:ft=enforce

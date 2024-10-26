@@ -81,14 +81,12 @@ modded class ZombieBase extends DayZInfected
             m_MindState = -1;
             SetSynchDirty();
 
-            //ZombieBase humanZ;
             if (g_Game.GetPBHZConfig().Get_SpawnParasiteOnZombiesDeath())
             {
                 vector zombieOffset2 = GetPosition() - "0.3 -0.3 0.3";
                 float maybeZ = Math.RandomInt(0, 99);
                 ZombieBase humanZ;
 
-                //ref array<string> s_Parasite = g_Game.GetPBHZConfig().Get_ZombieSpawnParasiteClassName();
                 if (maybeZ > 90 && !humanZ.IsParasite())
                 {
                     humanZ = ZombieBase.Cast(GetGame().CreateObjectEx("ZmbM_ParasiteZombie", zombieOffset2, ECE_PLACE_ON_SURFACE | ECE_INITAI));
@@ -123,7 +121,6 @@ modded class DayZPlayerImplement
 
             ref array<string> Hz_ZombieClass = g_Game.GetPBHZConfig().Get_ZombieClassName();
             humanZ2 = ZombieBase.Cast(GetGame().CreateObjectEx(Hz_ZombieClass.GetRandomElement(), zombieOffset, ECE_PLACE_ON_SURFACE | ECE_INITAI));
-//          humanZ2 = ZombieBase.Cast(GetGame().CreateObjectEx("ZmbM_HumanZombie", zombieOffset, ECE_PLACE_ON_SURFACE | ECE_INITAI));
 
             humanZ2.TransferAttachmentsFromZombie(this);
             humanZ2.SetOrientation(GetOrientation());
@@ -131,4 +128,6 @@ modded class DayZPlayerImplement
             GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLater(Delete, 2500);
         }
     }
-}
+};
+
+// vim:ft=enforce

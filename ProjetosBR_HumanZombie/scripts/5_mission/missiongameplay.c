@@ -18,3 +18,5 @@ modded class MissionGameplay
         }
     }
 };
+
+// vim:ft=enforce
