@@ -62,7 +62,7 @@ modded class ZombieBase extends DayZInfected
         }
     }
 
-    bool HandleDeath(int pCurrentCommandID)
+    override bool HandleDeath(int pCurrentCommandID)
     {
         if ( pCurrentCommandID == DayZInfectedConstants.COMMANDID_DEATH )
         {
