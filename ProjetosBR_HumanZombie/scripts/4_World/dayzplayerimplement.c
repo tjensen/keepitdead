@@ -9,6 +9,8 @@ modded class DayZPlayerImplement
 
         if (Keepitdead_zombie)
         {
+            // This works around a bug in the InediaInfectedAI mod.
+            // See: https://github.com/ysaroka/InediaInfectedAI/issues/48
             PrintFormat("Dead player %1 already spawned infected; skipping", this);
             return;
         }
