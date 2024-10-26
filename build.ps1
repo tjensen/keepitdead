@@ -16,6 +16,6 @@ $builderror = $errorMessage
 if ($buildcode -ne 0) { throw ("Exec: " + $builderror) }
 
 Move-Item "P:\@${ModName}\addons\${Prefix}.pbo" "P:\@${ModName}\addons\${ModName}.pbo"
-Move-Item "P:\@${ModName}\addons\${Prefix}.pbo.crimsonzamboni.bisign" "P:\@${ModName}\addons\${ModName}.pbo.crimsonzamboni.bisign"
+Move-Item "P:\@${ModName}\addons\${Prefix}.pbo.${env:BIKEY_NAME}.bisign" "P:\@${ModName}\addons\${ModName}.pbo.${env:BIKEY_NAME}.bisign"
 
 Copy-Item $env:BIKEY_PATH -Destination "P:\@${ModName}\keys"
