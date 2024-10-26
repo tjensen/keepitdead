@@ -8,12 +8,7 @@ class PBHZConfig
 
     void PBHZConfig()
     {
-        if (!GetGame().IsServer()) return;
-
-        if (!FileExist(MODCONFIG_ROOT_FOLDER))
-        {
-            MakeDirectory(MODCONFIG_ROOT_FOLDER);
-        }
+        MakeDirectory(MODCONFIG_ROOT_FOLDER);
 
         if (!FileExist(CONFIG_PATH))
         {
@@ -41,12 +36,12 @@ class PBHZConfig
 
     protected void Default()
     {
-        ZombieClassName = {"ZmbM_HumanZombie", "ZmbM_usSoldier_normal_Woodland", "ZmbM_usSoldier_normal_Desert","ZmbM_SoldierNormal"};
+        ZombieClassName = {"ZmbM_HumanZombie", "ZmbM_usSoldier_normal_Woodland", "ZmbM_usSoldier_normal_Desert", "ZmbM_SoldierNormal"};
         SpawnZombieOnPlayersDeath = true;
         Save();
     }
 
-    ref array<string> Get_ZombieClassName()
+    array<string> Get_ZombieClassName()
     {
         return ZombieClassName;
     }
