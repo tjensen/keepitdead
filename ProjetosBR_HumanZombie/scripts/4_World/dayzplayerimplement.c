@@ -22,7 +22,7 @@ modded class DayZPlayerImplement
 
         vector zombieOffset = GetPosition() - "0.3 -0.3 0.3";
 
-        ref array<string> Hz_ZombieClass = g_Game.GetPBHZConfig().Get_ZombieClassName();
+        array<string> Hz_ZombieClass = g_Game.GetPBHZConfig().Get_ZombieClassName();
         Keepitdead_zombie = ZombieBase.Cast(
             GetGame().CreateObjectEx(
                 Hz_ZombieClass.GetRandomElement(),

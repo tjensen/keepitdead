@@ -2,7 +2,7 @@ modded class DayZGame
 {
     private ref PBHZConfig m_PBHZConfig;
 
-    ref PBHZConfig GetPBHZConfig()
+    PBHZConfig GetPBHZConfig()
     {
         if (m_PBHZConfig)
         {
@@ -13,7 +13,7 @@ modded class DayZGame
         return null;
     }
 
-    void SetPBHZConfig(ref PBHZConfig cfg)
+    void SetPBHZConfig(PBHZConfig cfg)
     {
         m_PBHZConfig = cfg;
     }
