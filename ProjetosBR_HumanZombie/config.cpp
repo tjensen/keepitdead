@@ -1,18 +1,33 @@
+class CfgPatches
+{
+    class ProjetosBR_HumanZombie
+    {
+        requiredAddons[]=
+        {
+            "DZ_Characters",
+            "DZ_Characters_Zombies",
+            "DZ_Characters_Backpacks",
+            "DZ_Characters_Pants",
+            "DZ_Characters_Tops",
+            "DZ_Gear_Containers",
+            "DZ_Characters_Headgear",
+            "DZ_Gear_Camping",
+            "DZ_Gear_Crafting",
+            "DZ_Gear_Cooking",
+            "DZ_Gear_Tools",
+            "DZ_Animals",
+            "DZ_Data",
+            "DZ_Characters_Shoes",
+            "DZ_Characters_Gloves"
+        };
+    };
+};
+
 class CfgMods
 {
     class ProjetosBR_HumanZombie
     {
-        dir="ProjetosBR_HumanZombie";
-        picture="";
-        action="";
-        hideName=1;
-        hidePicture=1;
         name="ProjetosBR_HumanZombie";
-        credits="";
-        author="Morette";
-        authorID="0";
-        version="1.0";
-        extra=0;
         type="mod";
         dependencies[]=
         {
@@ -49,33 +64,7 @@ class CfgMods
         };
     };
 };
-class CfgPatches
-{
-    class ProjetosBR_HumanZombie
-    {
-        units[]={};
-        weapons[]={};
-        requiredVersion=0.1;
-        requiredAddons[]=
-        {
-            "DZ_Characters",
-            "DZ_Characters_Zombies",
-            "DZ_Characters_Backpacks",
-            "DZ_Characters_Pants",
-            "DZ_Characters_Tops",
-            "DZ_Gear_Containers",
-            "DZ_Characters_Headgear",
-            "DZ_Gear_Camping",
-            "DZ_Gear_Crafting",
-            "DZ_Gear_Cooking",
-            "DZ_Gear_Tools",
-            "DZ_Animals",
-            "DZ_Data",
-            "DZ_Characters_Shoes",
-            "DZ_Characters_Gloves"
-        };
-    };
-};
+
 class cfgWeapons
 {
     class RifleCore;
@@ -118,6 +107,7 @@ class cfgWeapons
         };
     };
 };
+
 class CfgSlots
 {
     class Slot_Shoulder
@@ -128,6 +118,7 @@ class CfgSlots
         name="Shoulder1";
     };
 };
+
 class CfgVehicles
 {
     class DZ_LightAI;
