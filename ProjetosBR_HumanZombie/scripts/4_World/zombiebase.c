@@ -3,10 +3,10 @@
  * @copyright ProjetoBR (c) 2021
  */
 
+#ifdef SERVER
 modded class ZombieBase : DayZInfected
 {
-#ifdef SERVER
-    void TransferAttachmentsFromZombie(EntityAI entity)
+    void TransferAttachmentsFrom(EntityAI entity)
     {
         for (int i = 0; i < entity.GetInventory().GetAttachmentSlotsCount(); i++)
         {
@@ -31,7 +31,7 @@ modded class ZombieBase : DayZInfected
             }
         }
     }
-#endif // SERVER
 };
+#endif // SERVER
 
 // vim:ft=enforce

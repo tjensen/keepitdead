@@ -25,7 +25,7 @@ modded class DayZPlayerImplement
                 zombieOffset,
                 ECE_PLACE_ON_SURFACE | ECE_INITAI));
 
-        Keepitdead_zombie.TransferAttachmentsFromZombie(this);
+        Keepitdead_zombie.TransferAttachmentsFrom(this);
         Keepitdead_zombie.SetOrientation(GetOrientation());
 
         GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLater(Delete, 2500);
